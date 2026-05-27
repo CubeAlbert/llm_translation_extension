@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻译</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>AI 翻译</h1>
+      <a href="#" id="openSettings" class="settings-link" title="设置">⚙</a>
+    </div>
+
+    <div class="controls">
+      <div class="control-row">
+        <div class="control-group">
+          <label for="sourceLang">源语言</label>
+          <select id="sourceLang"></select>
+        </div>
+        <button type="button" id="swapLang" class="swap-btn" title="交换语言">⇄</button>
+        <div class="control-group">
+          <label for="targetLang">目标语言</label>
+          <select id="targetLang"></select>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="model">模型</label>
+        <input type="text" id="model" list="modelList" placeholder="gpt-4o">
+        <datalist id="modelList">
+          <option value="gpt-4o">
+          <option value="gpt-4-turbo">
+          <option value="gpt-4">
+          <option value="gpt-3.5-turbo">
+          <option value="deepseek-chat">
+          <option value="claude-3-opus">
+          <option value="claude-3-sonnet">
+          <option value="claude-3-haiku">
+          <option value="gemini-pro">
+        </datalist>
+      </div>
+    </div>
+
+    <div class="translation-area">
+      <textarea id="inputText" placeholder="输入要翻译的文本..." rows="4"></textarea>
+      <div id="outputArea" class="output-area">
+        <span class="placeholder">翻译结果将显示在这里</span>
+      </div>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

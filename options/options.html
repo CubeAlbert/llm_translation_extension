@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻译扩展设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>翻译扩展设置</h1>
+
+    <form id="settingsForm">
+      <div class="form-group">
+        <label for="apiEndpoint">API 地址</label>
+        <input type="url" id="apiEndpoint" placeholder="https://api.openai.com/v1/chat/completions" required>
+        <span class="hint">OpenAI 兼容的 Chat Completions API 地址</span>
+      </div>
+
+      <div class="form-group">
+        <label for="apiKey">API Key</label>
+        <div class="password-wrapper">
+          <input type="password" id="apiKey" placeholder="sk-..." required>
+          <button type="button" id="toggleKey" class="toggle-btn" title="显示/隐藏">👁</button>
+        </div>
+        <span class="hint">您的 API 密钥，仅保存在本地浏览器中</span>
+      </div>
+
+      <div class="form-group">
+        <label for="defaultModel">默认模型</label>
+        <input type="text" id="defaultModel" placeholder="gpt-4o" required>
+        <span class="hint">例如: gpt-4o, gpt-4-turbo, gpt-3.5-turbo, deepseek-chat 等</span>
+      </div>
+
+      <div class="form-group">
+        <div class="label-row">
+          <label for="systemPrompt">翻译提示词</label>
+          <button type="button" id="restorePrompt" class="link-btn">恢复默认</button>
+        </div>
+        <textarea id="systemPrompt" rows="14" placeholder="留空则使用默认提示词"></textarea>
+        <span class="hint">支持占位符：<code>{{sourceLabel}}</code> <code>{{targetLabel}}</code> <code>{{sourceLang}}</code> <code>{{targetLang}}</code></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" id="saveBtn">保存设置</button>
+      </div>
+
+      <div id="message" class="message hidden"></div>
+    </form>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>

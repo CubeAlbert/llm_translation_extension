@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "AI 翻译助手"
+  },
+  "extDesc": {
+    "message": "基于 OpenAI 兼容 API 的智能翻译扩展，支持划词翻译、弹窗翻译和全页面翻译"
+  }
+}
